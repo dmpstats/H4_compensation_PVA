@@ -55,7 +55,7 @@ spa_name <- "Flamborough Head and Bempton Cliffs"
 #  ====    Upload data         ====
 #' --------------------------------
 
-load("data/Bruno_eval.Rdata")
+load("data/theta_given_sandeel_F_draws.Rdata")
 theta_given_F_draws <- data.bruno
 
 colMeans(theta_given_F_draws)
@@ -374,10 +374,6 @@ highRec_pva_output <- nepva.simplescenarios(
 
 
 
-lowRec_addBirds_ya
-
-lowRec_pva_output$tab
-
 
 #' ------------------------------------------------------------------------------------------
 #  ====   Gather results from PVAs and post-process (inc. additional birds calculation)  ====
@@ -401,8 +397,6 @@ pva_outputs_addBirds_long <- pva_outputs %>%
     years <- x$years
     sim_n <- x$sim.n
     
-    #browser()
-    
     out <- list()
     k <- 1
     for(y in 1:length(years)){
@@ -424,12 +418,9 @@ pva_outputs_addBirds_long <- pva_outputs %>%
   })
 
 
-str(pva_outputs_addBirds_long)
-
-
 
 # Some sense-check plots
-pva_outputs_addBirds_long %>%
+p1 <- pva_outputs_addBirds_long %>%
   bind_rows(.id = "recruit_scen") %>%
   filter(age_class == 4) %>%
   group_by(recruit_scen, year) %>%
@@ -438,12 +429,27 @@ pva_outputs_addBirds_long %>%
             uppBound = quantile(n_change_from_bsln, probs = c(0.975))) %>%
   ggplot(aes(x = year, y = med)) +
   geom_line(aes(x = year, y = med, col = recruit_scen), size = 1) +
-  geom_ribbon(aes(ymin = lowBound, ymax = uppBound, col = recruit_scen, fill =recruit_scen), alpha = 0.3,
+  geom_ribbon(aes(ymin = lowBound, ymax = uppBound, col = recruit_scen, fill = recruit_scen), alpha = 0.3,
               linetype = "dashed") +
-  labs(y = "Change from baseline (adults)")
+  scale_fill_discrete(
+    name = "Recruitment level",
+    breaks = c("highRec_pva", "midRec_pva", "lowRec_pva"),
+    labels = c("High", "Medium","Low")
+  ) +
+  scale_color_discrete(
+    name = "Recruitment level",
+    breaks = c("highRec_pva", "midRec_pva", "lowRec_pva"),
+    labels = c("High", "Medium","Low")
+  ) +
+  labs(y = "Change from status-quo F (adult numbers)", x = "Year")
+
+p1
+
+ggsave(plot = p1, 
+       filename = "outputs/fishing/pva_Flamb_Head_Bempt_Cliffs_change_from_statusQuo.png")
 
 
-pva_outputs_addBirds_long %>%
+p2 <- pva_outputs_addBirds_long %>%
   bind_rows(.id = "recruit_scen") %>%
   filter(age_class == 4) %>%
   select(-n_change_from_bsln) %>%
@@ -452,12 +458,34 @@ pva_outputs_addBirds_long %>%
   summarise(lowBound = quantile(value, probs = c(0.025)), 
             med = quantile(value, probs = c(0.5)),
             uppBound = quantile(value, probs = c(0.975))) %>%
+  mutate(
+    recruit_scen = case_when(
+      recruit_scen == "highRec_pva" ~ "High Recruitment",
+      recruit_scen == "midRec_pva" ~ "Medium Recruitment",
+      recruit_scen == "lowRec_pva" ~ "Low Recruitment"
+    )
+  ) %>%
+  mutate(recruit_scen = factor(recruit_scen, levels = unique(recruit_scen))) %>%
+  mutate(recruit_scen = fct_relevel(recruit_scen, c("High Recruitment", "Medium Recruitment", "Low Recruitment"))) %>%
   ggplot(aes(x = year, y = med)) +
   geom_line(aes(x = year, y = med, col = scenario), size = 1) +
   geom_ribbon(aes(ymin = lowBound, ymax = uppBound,  col = scenario, fill = scenario), alpha = 0.3, linetype = "dashed")+
   facet_wrap(~recruit_scen, ncol = 3) +
   theme(legend.position="bottom") +
-  labs(y = "Adults")
+  scale_fill_discrete(
+    name = "Scenario",
+    labels = c("Status-Quo F", "Reduced F")
+  ) +
+  scale_color_discrete(
+    name = "Scenario",
+    labels = c("Status-Quo F", "Reduced F")
+  ) +
+  labs(y = "Adult Numbers", x = "Year")
+
+p2
+
+ggsave(plot = p2, width = 35, height = 15, units = "cm",
+       filename = "outputs/fishing/pva_Flamb_Head_Bempt_Cliffs_statusQuoF_Vs_reducedF_adults.png")
 
 
 
@@ -473,13 +501,11 @@ pva_outputs_addBirds_long %>%
   mutate(ptcg_change = (imp_parF-bsln_totF)/bsln_totF)
 
 
-ktable
-
 #' -------------------------------
 #  ====   Write out data      ====
 #' -------------------------------
 
-write_rds(pva_outputs_addBirds_long, path = "../../outputs/fishing/pva_Flamb_Head_Bempt_Cliffs_outputs_scen_ya.rds", 
+write_rds(pva_outputs_addBirds_long, path = "outputs/fishing/pva_Flamb_Head_Bempt_Cliffs_outputs_scen_ya.rds", 
           compress = "gz")
 
 
