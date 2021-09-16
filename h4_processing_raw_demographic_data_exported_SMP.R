@@ -21,17 +21,16 @@ options(dplyr.width = Inf)
 
 
 
-
 #' --------------------------------
 #  ====    Coquet Island       ====
 #' --------------------------------
 
 #' Note 1: replacing initially considered the Northumberland Marine pSPA. 
-#' Note 2:Coquet Island data contained in initially gathered data
+#' Note 2: Coquet Island data contained in initially gathered data
 
 # --- Colony Counts  -----#
 
-cc_coquet <- read_csv("../../data/Northumberland_colony counts_SMP database_data_export.csv") %>%
+cc_coquet <- read_csv("data/Northumberland_colony counts_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   arrange(Start_date) %>%
   filter(Count > 0,
@@ -58,7 +57,7 @@ cc_coquet %>%
 
 
 # Annual counts in SPA
-cc_coquet <- cc_coquet %>%
+counts_coquet <- cc_coquet %>%
   group_by(Species, Year, Unit) %>%
   summarise(Count = sum(Count)) %>%
   mutate(spa = "Coquet Island", .after = "Species") %>%
@@ -66,9 +65,10 @@ cc_coquet <- cc_coquet %>%
 
 
 
+
 # --- Breeding Success -----#
 
-bs_coquet <- read_csv("../../data/Northumberland_breeding_success_SMP database_data_export.csv") %>%
+bs_coquet <- read_csv("data/Northumberland_breeding_success_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   arrange(Year, Site) %>%
   filter(Master_site == "Coquet Island SPA") %>%
@@ -80,19 +80,24 @@ bs_coquet %>%
   group_by(Site) %>%
   summarise(startYear = min(Year), endYear = max(Year), mean_FPP = mean(fledgedPerPair))
 
-# Add colony counts data
-bs_coquet %<>% 
-  left_join(., select(cc_coquet, Year, Count), by = c("Species", "Year")) %>%
-  rename(bs_count = Count.x, cc_count=(Count.y))
-
-table(bs_coquet$Year)
-
-#' Up till 2006, colony counts and number of nests surveyed for breeding success are equal
+#' More than one entry per year?
 bs_coquet %>%
-  select(Year,bs_count, cc_count) %>%
-  pivot_longer(-Year, names_to = "count_type", values_to = "Count") %>%
-  ggplot(aes(x = Year)) +
-  geom_line(aes(y = Count, col = count_type))
+  group_by(Year, Site) %>%
+  summarise(n=n()) %>% arrange(desc(n))
+
+#' # Add colony counts data
+#' bs_coquet %<>% 
+#'   left_join(., select(cc_coquet, Year, Count), by = c("Species", "Year")) %>%
+#'   rename(bs_count = Count.x, cc_count=(Count.y))
+#' 
+#' table(bs_coquet$Year)
+#' 
+#' #' Up till 2006, colony counts and number of nests surveyed for breeding success are equal
+#' bs_coquet %>%
+#'   select(Year,bs_count, cc_count) %>%
+#'   pivot_longer(-Year, names_to = "count_type", values_to = "Count") %>%
+#'   ggplot(aes(x = Year)) +
+#'   geom_line(aes(y = Count, col = count_type))
 
 
 #' Data available restricted to one site, one entry per year, 
@@ -100,16 +105,12 @@ bs_coquet %>%
 #' SD of productivity follows directly
 prod_coquet <- bs_coquet %>% 
   group_by(Species, Master_site) %>%
-  filter(Year >= 2010) %>%
   summarise(prod_mean = mean(fledgedPerPair), prod_sd = sd(fledgedPerPair),
             startYear = min(Year), endYear = max(Year), n = n())%>%
   mutate(source = "smp_db") %>%
   rename(spa = Master_site)
 
 prod_coquet
-
-
-
 
 
 #' ---------------------------------------
@@ -119,7 +120,7 @@ prod_coquet
 
 # --- Colony Counts -----#
 
-cc_st_abbs <- read_csv("../../data/St Abb’s Head to Fast Castle_colony counts_SMP database_data_export.csv") %>%
+cc_st_abbs <- read_csv("data/St Abb’s Head to Fast Castle_colony counts_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   arrange(Start_date) %>%
   filter(Count > 0) %>%
@@ -136,7 +137,7 @@ cc_st_abbs %>% filter(Site == "Broadhaven to Moorburn Point") %>% filter(Year ==
 #' Not sure how to combine partial multiple counts in a given year. Are they counts from different cliffs?
 #' Maybe multiple counting events of the same colony/cliff?
 #'  
-#' Summing them over, i.e. assuming counts made at different sections/cliffs of the site - NEEDS CONFIRMATION!
+#' Summing them over, i.e. assuming counts made at different sections/cliffs of the site
 cc_st_abbs %<>% 
   arrange(Year) %>%
   group_by(Species, County, Master_site, Site, Year, Unit) %>%
@@ -154,7 +155,7 @@ cc_st_abbs %>%
   summarise(min(Count), mean(Count), sd(Count),max(Count))
 
 
-#' Found official counts for kittiwakes in St Abb's Head NNR reported in SMP Report 1986–2018 (Table 1):
+#' Official counts for kittiwakes in St Abb's Head NNR reported in SMP Report 1986–2018 (Table 1):
 #' (https://jncc.gov.uk/our-work/black-legged-kittiwake-rissa-tridactyla/)
 #' Reports 3,244 kittiwakes in 2018 (Table 1)
 cc_st_abbs %>% filter(Year == 2018) # So, summing over counts in each year appears to be the correct approach
@@ -175,7 +176,7 @@ counts_st_abbs <- cc_st_abbs %>%
 
 # --- Breeding Success  -----#
 
-bs_st_abbs <- read_csv("../../data/St Abb’s Head to Fast Castle_breeding_success_SMP database_data_export.csv") %>%
+bs_st_abbs <- read_csv("data/St Abb’s Head to Fast Castle_breeding_success_SMP database_data_export_2.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   arrange(Year, Site) %>%
   mutate(fledgedPerPair = Fledged_count/Count) #' productivity (No. fledged/pair)
@@ -202,14 +203,13 @@ bs_st_abbs %>%
 #' SD of productivity follows directly
 prod_st_abbs <- bs_st_abbs %>% 
   group_by(Species, Master_site) %>%
-  filter(Year >= 2010) %>%
+  #filter(Year >= 2010) %>%
   summarise(prod_mean = mean(fledgedPerPair), prod_sd = sd(fledgedPerPair),
            startYear = min(Year), endYear = max(Year), n = n())%>%
   mutate(source = "smp_db") %>%
   rename(spa = Master_site)
 
-
-
+prod_st_abbs
 
 
 
@@ -219,7 +219,7 @@ prod_st_abbs <- bs_st_abbs %>%
 
 # --- Colony Counts  -----#
 
-cc_farne_islands <- read_csv("../../data/Farne Islands SPA_colony counts_SMP database_data_export.csv") %>%
+cc_farne_islands <- read_csv("data/Farne Islands SPA_colony counts_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   arrange(Start_date) %>%
   filter(Count > 0) %>%
@@ -262,7 +262,7 @@ counts_farne_islands %>% filter(Year == 2017)  # 4753 - well below reported...!!
 
 # --- Breeding Success  -----#
 
-bs_farne_islands <- read_csv("../../data/Farne Islands SPA_breeding_success_SMP database_data_export.csv") %>%
+bs_farne_islands <- read_csv("data/Farne Islands SPA_breeding_success_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   arrange(Year, Site) %>%
   mutate(fledgedPerPair = Fledged_count/Count) #' productivity (No. fledged/pair)
@@ -286,22 +286,21 @@ bs_farne_islands %>%
 #' SD of productivity follows directly
 prod_farne_islands <- bs_farne_islands %>% 
   group_by(Species, Master_site) %>%
-  filter(Year >= 2010) %>%
   summarise(prod_mean = mean(fledgedPerPair), prod_sd = sd(fledgedPerPair),
             startYear = min(Year), endYear = max(Year), n = n())%>%
   mutate(source = "smp_db") %>%
   rename(spa = Master_site)
 
-
+prod_farne_islands
 
 
 #' ---------------------------------------
-#  ===         Forth Islands           ===
+#  ====         Forth Islands         ====
 #' ---------------------------------------
 
 # --- Colony Counts  -----#
 
-cc_forth_islands <- read_csv("../../data/Forth Islands SPA_colony counts_SMP database_data_export.csv") %>%
+cc_forth_islands <- read_csv("data/Forth Islands SPA_colony counts_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   arrange(Start_date) %>%
   filter(Count > 0) %>%
@@ -356,7 +355,7 @@ counts_forth_islands %>% filter(Year == 2000)     # reports 6,632 in 2000 bang o
 #' However CEH publishes breeding season data for the Isle of May
 #' (https://www.ceh.ac.uk/isle-may-breeding-season-summaries)
 
-bs_forth_islands <- read_csv("../../data/Kittiwake_IsleOfMay_productivities from CEH.csv") %>%
+bs_forth_islands <- read_csv("data/Kittiwake_IsleOfMay_productivities from CEH.csv") %>%
   mutate(Species = "Kittiwake", Master_site = "Forth Islands SPA", Site = "Isle of May", .before = "Year")
   
 bs_forth_islands %>%
@@ -371,16 +370,17 @@ prod_forth_islands <- bs_forth_islands %>%
   mutate(source = "ceh") %>%
   rename(spa = Master_site)
 
+prod_forth_islands
 
 
 
 #' ---------------------------------------------
-#  ===   Buchan Ness to Collieston Coast     ===
+#  ====   Buchan Ness to Collieston Coast  ====
 #' ---------------------------------------------
 
 # --- Colony Counts  -----#
 
-cc_buchan_collie <- read_csv("../../data/Buchan Ness to Collieston Coast SPA_colony counts_SMP database_data_export.csv") %>%
+cc_buchan_collie <- read_csv("data/Buchan Ness to Collieston Coast SPA_colony counts_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   filter(Count > 0) %>%
   mutate(Year = year(dmy(Start_date))) %>%
@@ -423,7 +423,7 @@ counts_buchan_collie %>% filter(Year == 2001)  # bang on!
 
 # --- Breeding Success  -----#
 
-bs_buchan_collie <- read_csv("../../data/Buchan Ness to Collieston Coast SPA_breeding_success_SMP database_data_export.csv") %>%
+bs_buchan_collie <- read_csv("data/Buchan Ness to Collieston Coast SPA_breeding_success_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   arrange(Year, Site) %>%
   mutate(fledgedPerPair = Fledged_count/Count) #' productivity (No. fledged/pair)
@@ -456,11 +456,12 @@ annualProd_buchan_collie %>%
 # Total mean and sd productivity
 prod_buchan_collie <- annualProd_buchan_collie %>%
   group_by(Species, Master_site) %>%
-  #filter(Year >= 2010) %>%
   summarise(prod_mean = mean(annualAvgProd), prod_sd = sd(annualAvgProd),
             startYear = min(Year), endYear = max(Year), n = n())%>%
   mutate(source = "smp_db")  %>%
   rename(spa = Master_site)
+
+prod_buchan_collie
 
 
 
@@ -470,7 +471,7 @@ prod_buchan_collie <- annualProd_buchan_collie %>%
 
 # --- Colony Counts  -----#
 
-cc_fowlsheugh <- read_csv("../../data/Fowlsheugh SPA_colony counts_SMP database_data_export.csv") %>%
+cc_fowlsheugh <- read_csv("data/Fowlsheugh SPA_colony counts_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   filter(Count > 0) %>%
   mutate(Year = year(dmy(Start_date))) %>%
@@ -510,7 +511,7 @@ counts_fowlsheugh %>% filter(Year == 1999)  # way off! Looks like an error in re
 
 # --- Breeding Success  -----#
 
-bs_fowlsheugh <- read_csv("../../data/Fowlsheugh SPA_breeding_success_SMP database_data_export.csv") %>%
+bs_fowlsheugh <- read_csv("data/Fowlsheugh SPA_breeding_success_SMP database_data_export_2.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   arrange(Year, Site) %>%
   mutate(fledgedPerPair = Fledged_count/Count) #' productivity (No. fledged/pair)
@@ -541,13 +542,13 @@ annualProd_fowlsheugh %>%
 
 # Total mean and sd productivity
 prod_fowlsheugh <- annualProd_fowlsheugh %>%
-  filter(Year >= 2010) %>%
   group_by(Species, Master_site) %>%
   summarise(prod_mean = mean(annualAvgProd), prod_sd = sd(annualAvgProd),
             startYear = min(Year), endYear = max(Year), n = n())%>%
   mutate(source = "smp_db") %>%
   rename(spa = Master_site)
 
+prod_fowlsheugh
 
 
 
@@ -557,7 +558,7 @@ prod_fowlsheugh <- annualProd_fowlsheugh %>%
 
 # --- Colony Counts  -----#
 
-cc_troup_pen_lion <- read_csv("../../data/Troup, Pennan and Lion's Heads SPA_colony counts_SMP database_data_export.csv") %>%
+cc_troup_pen_lion <- read_csv("data/Troup, Pennan and Lion's Heads SPA_colony counts_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   filter(Count > 0) %>%
   mutate(Year = year(dmy(Start_date))) %>%
@@ -602,7 +603,7 @@ cc_troup_pen_lion %>% filter(Year == 2017)
 
 # --- Breeding Success  -----#
 
-bs_troup_pen_lion <- read_csv("../../data/Troup, Pennan and Lion's Heads SPA_breeding_success_SMP database_data_export.csv") %>%
+bs_troup_pen_lion <- read_csv("data/Troup, Pennan and Lion's Heads SPA_breeding_success_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   arrange(Year, Site) %>%
   mutate(fledgedPerPair = Fledged_count/Count) #' productivity (No. fledged/pair)
@@ -654,7 +655,7 @@ prod_troup_pen_lion
 
 #' --- Colony Counts  -----#
 
-cc_flamb_bemp_cliffs <- read_csv("../../data/Flamborough Head and Bempton Cliffs_colony counts_SMP database_data_export.csv") %>%
+cc_flamb_bemp_cliffs <- read_csv("data/Flamborough Head and Bempton Cliffs_colony counts_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   filter(Count > 0) %>%
   mutate(Year = year(dmy(Start_date))) %>%
@@ -697,7 +698,7 @@ counts_flamb_bemp_cliffs %>% filter(Year == 2000)  # bang on!
 
 # --- Breeding Success  -----#
 
-bs_flamb_bemp_cliffs <- read_csv("../../data/Flamborough Head and Bempton Cliffs_breeding_success_SMP database_data_export.csv") %>%
+bs_flamb_bemp_cliffs <- read_csv("data/Flamborough Head and Bempton Cliffs_breeding_success_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   arrange(Year, Site) %>%
   mutate(fledgedPerPair = Fledged_count/Count) #' productivity (No. fledged/pair)
@@ -727,10 +728,6 @@ annualProd_flamb_bemp_cliffs %>%
   geom_line()
 
 
-
-
-# Total mean and sd productivity for period for ~last 10 years
-annualProd_flamb_bemp_cliffs$Year
 
 
 prod_flamb_bemp_cliffs <- annualProd_flamb_bemp_cliffs %>%
@@ -764,7 +761,7 @@ SPAs_prod_pars <- bind_rows(
   prod_troup_pen_lion
 )
 
-write_csv(SPAs_prod_pars, "../../data/SPAs_prod_pars.csv")
+write_csv(SPAs_prod_pars, "data/SPAs_prod_pars.csv")
 
 
 
@@ -774,7 +771,7 @@ write_csv(SPAs_prod_pars, "../../data/SPAs_prod_pars.csv")
 
 spa_annual_counts <- bind_rows(
   counts_flamb_bemp_cliffs,
-  counts_North_Marine,
+  counts_coquet,
   counts_st_abbs,
   counts_farne_islands,
   counts_forth_islands,
@@ -789,7 +786,7 @@ spa_annual_counts %<>%
   arrange(Year)
 
 
-write_csv(spa_annual_counts, "../../data/SPAs_annual_counts.csv")
+write_csv(spa_annual_counts, "data/SPAs_annual_counts.csv")
 
 
 
@@ -800,189 +797,23 @@ write_csv(spa_annual_counts, "../../data/SPAs_annual_counts.csv")
 
 
 
-#' ---------------------------------------------------------------------------------------
-#  ===    Quick look at regional reconstructured survivals  from Horswill et al 2021   ===
-#' --------------------------------------------------------------------------------------
-
-reconst_demRates <- readxl::read_xlsx("../../data/kitti_demog_rates_Horswill_etal.xlsx") %>%
-  mutate(population_main = str_extract(string = Population, pattern =".+(?=\\s:)|(.+$)"))
-
-unique(reconst_demRates$population_main)
-
-reconst_adultSurvivals <- reconst_demRates %>%
-  filter(Demographic_rate == "Adult survival",
-         population_main %in% c("Flamborough Head and Bempton Cliffs", "Fowlsheugh RSPB", "Farne Islands", 
-                                "Troup, Pennan and Lion's Heads" , "St Abb's Head NNR")) %>%
-  group_by(Demographic_rate, population_main) %>%
-  summarise(mean_reconst = mean(Reconst_median), sd_reconst = sd(Reconst_median), n = n())
-  
-reconst_adultSurvivals
-
-
-
-
-
-
-#' #' -------------------------------------------------
-#' #  ===    Flamborough and Filey Coast SPA        ===
-#' #' -------------------------------------------------
+#' #' ---------------------------------------------------------------------------------------
+#' #  ===    Quick look at regional reconstructured survivals  from Horswill et al 2021   ===
+#' #' --------------------------------------------------------------------------------------
 #' 
-#' #' NOTE: Diverging from Aonghais recommendation to use Flamborough Head and Bempton Cliffs, after later feedback from 
-#' #' Natural England to use demographic parameters from recent PVA on Hornsea Four (APEM, 2020). This PVA study is applied to the 
-#' #' Flamborough and Filey Coast SPA, which is an extension to Flamborough Head and Bempton Cliffs as it includes the
-#' #' Filey Coast. At the moment, the SMP database is not bundling Flamborough Head and Bempton Cliffs and Filey Coast under 
-#' #' the same master SPA, so it requires two separate downloads
+#' reconst_demRates <- readxl::read_xlsx("../../data/kitti_demog_rates_Horswill_etal.xlsx") %>%
+#'   mutate(population_main = str_extract(string = Population, pattern =".+(?=\\s:)|(.+$)"))
 #' 
+#' unique(reconst_demRates$population_main)
 #' 
-#' 
-#' # --- Colony Counts  -----#
-#' 
-#' # - Flamborough Head and Bempton Cliffs 
-#' cc_flamb_bemp_cliffs <- read_csv("../../data/Flamborough Head and Bempton Cliffs_colony counts_SMP database_data_export.csv") %>%
-#'   rename_with(str_replace, pattern = " ", replacement = "_") %>%
-#'   filter(Count > 0) %>%
-#'   mutate(Year = year(dmy(Start_date))) %>%
-#'   arrange(Year) ; cc_flamb_bemp_cliffs
-#' 
-#' #' Summing multiple entries in a year
-#' cc_flamb_bemp_cliffs %<>% 
-#'   group_by(Species, County, Master_site, Site, Year, Unit) %>%
-#'   summarise(Count = sum(Count), Accuracy = paste(Accuracy, collapse = "-"), .groups = "drop")
-#' 
-#' 
-#' # - Filey Coast is bundled with Cayton Bay
-#' cc_cayton_filey <- read_csv("../../data/Cayton Bay to Filey_colony counts_SMP database_data_export.csv") %>%
-#'   rename_with(str_replace, pattern = " ", replacement = "_") %>%
-#'   filter(Count > 0) %>%
-#'   mutate(Year = year(dmy(Start_date))) %>%
-#'   arrange(Year) ; cc_cayton_filey
-#' 
-#' #' Summing multiple entries in a year
-#' cc_filey <- cc_cayton_filey %>% 
-#'   filter(str_detect(Site, "Filey")) %>%
-#'   group_by(Species, County, Year, Unit) %>% 
-#'   summarise(Count = sum(Count), 
-#'             Accuracy = paste(Accuracy, collapse = "-"), 
-#'             .groups = "drop") %>%
-#'   mutate(Master_site = "Flamborough and Filey Coast SPA", 
-#'          Site = "Filey Coast", 
-#'          .after = "County")
+#' reconst_adultSurvivals <- reconst_demRates %>%
+#'   filter(Demographic_rate == "Adult survival",
+#'          population_main %in% c("Flamborough Head and Bempton Cliffs", "Fowlsheugh RSPB", "Farne Islands", 
+#'                                 "Troup, Pennan and Lion's Heads" , "St Abb's Head NNR")) %>%
+#'   group_by(Demographic_rate, population_main) %>%
+#'   summarise(mean_reconst = mean(Reconst_median), sd_reconst = sd(Reconst_median), n = n())
 #'   
+#' reconst_adultSurvivals
 #' 
-#' #- Combine the two sites
-#' cc_flamb_filey <- bind_rows(cc_flamb_bemp_cliffs, cc_filey) 
-#' 
-#' #### !!! BC: Can't combine the time series of the two sites properly as they only overlap in 2016 and 2017 !!!
-#' 
-#' 
-#' 
-#' # --- Breeding Success  -----#
-#' 
-#' #' For the moment, using the same mean and sd as the APEM (2020) report
 
 
-
-
-
-#' #' -------------------------------------------------
-#' #  ===   Northumberland Marine pSPA        ===
-#' #' -------------------------------------------------
-#' 
-#' # --- Colony Counts  -----#
-#' 
-#' cc_North_Marine <- read_csv("../../data/Northumberland_colony counts_SMP database_data_export.csv") %>%
-#'   rename_with(str_replace, pattern = " ", replacement = "_") %>%
-#'   arrange(Start_date) %>%
-#'   filter(Count > 0) %>%
-#'   mutate(Year = year(dmy(Start_date))) ; cc_North_Marine
-#' 
-#' #' find out if there are more than one entry in one year, per site
-#' cc_North_Marine %>% group_by(Year, Site) %>% summarise(n = n()) %>% filter(n>1)
-#' 
-#' cc_North_Marine %>% filter(Site == "Farne Islands") %>% filter(Year == 2006)
-#' 
-#' 
-#' #' Summing up over Year as there are multiple entries for Farne Islands in 2006. ' Comments say "No methods, 
-#' #' dates or times provided." - assuming partials can be summed up to give 2006
-#' cc_North_Marine %<>% 
-#'   arrange(Year) %>%
-#'   group_by(Species, County, Master_site, Site, Year, Unit) %>%
-#'   summarise(Count = sum(Count), Accuracy = paste(Accuracy, collapse = "-"), .groups = "drop") %>%
-#'   filter(str_detect(Site, "Berwick", negate = TRUE)) # dropping counts from Berwick plots
-#' 
-#' cc_North_Marine
-#' 
-#' 
-#' # graphical check to see if there is anything out of order
-#' cc_North_Marine %>%
-#'   ggplot() +
-#'   geom_col(aes(Year, Count)) +
-#'   facet_wrap(~Site, nrow = 3)
-#' 
-#' # summary check
-#' cc_North_Marine %>%
-#'   group_by(Site) %>%
-#'   summarise(min(Count), mean(Count), sd(Count),max(Count))
-#' 
-#' 
-#' # Annual counts in SPA
-#' counts_North_Marine <- cc_North_Marine %>%
-#'   group_by(Species, Year, Unit) %>%
-#'   summarise(Count = sum(Count)) %>%
-#'   mutate(spa = "Northumberland Marine", .after = "Species") %>%
-#'   mutate(source = "smp_db")
-#' 
-#' 
-#' 
-#' # --- Breeding Success -----#
-#' 
-#' bs_North_Marine <- read_csv("../../data/Northumberland_breeding_success_SMP database_data_export.csv") %>%
-#'   rename_with(str_replace, pattern = " ", replacement = "_") %>%
-#'   arrange(Year, Site) %>%
-#'   mutate(fledgedPerPair = Fledged_count/Count) #' productivity (No. fledged/pair)
-#' 
-#' 
-#' #' quick check summary --> quite disparate mean productivities between sites
-#' bs_North_Marine %>%
-#'   group_by(Site) %>%
-#'   summarise(startYear = min(Year), endYear = max(Year), mean_FPP = mean(fledgedPerPair))
-#' 
-#' 
-#' # Colony sizes of Farne Islands (~5000) and Coquet Island (~100) are quite different, as seen in the above plots 
-#' # Investigating further...
-#' 
-#' # Add colony counts data
-#' bs_North_Marine %<>% 
-#'   left_join(., select(cc_North_Marine, Year, Site, Count), by = c("Year", "Site")) %>%
-#'   rename(bs_count = Count.x, cc_count=(Count.y))
-#' 
-#' #' Coquet Island: 
-#' #' (i) up till 2006, colony counts and number of nests surveyed for breeding success are equal
-#' # (ii) Colony counts increase over time - due to better surveying or increasing population??
-#' bs_North_Marine %>% filter(Site == "Coquet Island RSPB") %>%
-#'   select(Year,bs_count, cc_count) %>%
-#'   pivot_longer(-Year, names_to = "count_type", values_to = "Count") %>%
-#'   ggplot(aes(x = Year)) +
-#'   geom_line(aes(y = Count, col = count_type))
-#' 
-#' 
-#' #' Probably more sensible to calculate annual averages (i.e. across sites) using weighted means, 
-#' #' with colony counts as weights
-#' annualProd_North_Marine <- bs_North_Marine %>% 
-#'   group_by(Species, Year) %>%
-#'   summarise(annualAvgProd =  weighted.mean(fledgedPerPair, cc_count)) %>%
-#'   mutate(Master_site = "Northumberland Marine", .after = Species)
-#' 
-#' 
-#' annualProd_North_Marine %>%
-#'   ggplot(aes(x=Year, y = annualAvgProd)) +
-#'   geom_line()
-#' 
-#' 
-#' # Total mean and sd productivity
-#' prod_North_Marine <- annualProd_North_Marine %>%
-#'   group_by(Species, Master_site) %>%
-#'   summarise(prod_mean = mean(annualAvgProd), prod_sd = sd(annualAvgProd),
-#'             startYear = min(Year), endYear = max(Year), n = n())%>%
-#'   mutate(source = "smp_db") %>%
-#'   rename(spa = Master_site)
