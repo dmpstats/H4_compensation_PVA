@@ -39,7 +39,7 @@ spa_name <- "Fowlsheugh SPA"
 #  ====    Upload data         ====
 #' --------------------------------
 
-annual_prod <- read_csv("../../data/SPAs_prod_pars.csv") %>%
+annual_prod <- read_csv("data/SPAs_prod_pars.csv") %>%
   filter(spa == spa_name); annual_prod
 
 
@@ -101,14 +101,13 @@ bsln_adult_surv <- data.frame(Mean = 0.854, SD = 0.051); bsln_adult_surv
 bsln_prod <- data.frame(Mean = annual_prod$prod_mean, SD = annual_prod$prod_sd); bsln_prod
 
 
-# # Percentage of adult breeding birds that skip breeding in any particular year (sabbaticals)
-# bsln_sabbaticals <- data.frame(Mean = c(0.208), SD = c(0.207)); bsln_sabbaticals
-
-
 
 #' ----------------------------------------------------
 #  ====   NEPVA inputs: Impact Scenarios        ====
 #' ----------------------------------------------------
+
+# The PVA function requires at least one impact scenario to be specified.
+# So, for the purpose of this analysis, where impacts are not required, we set up a 0-impact scenario
 
 # Number of impacts
 nimpacts <- 1
@@ -142,7 +141,7 @@ imp_survadult_mean <- c(0)
 imp_start <- N_0_year + 1
 
 # impact final year
-imp_end <- N_0_year + 20
+imp_end <- N_0_year + 35
 
 
 
@@ -151,7 +150,7 @@ imp_end <- N_0_year + 20
 #' ----------------------------------------------------
 
 # Number of simulations
-nsim <- 1000 # 5000
+nsim <- 5000
 
 # Years of burn-in
 nburnin <- 0
@@ -160,8 +159,8 @@ nburnin <- 0
 seed_value <- 109
 
 
-# Number of year to project the population forward - 20 years
-projection_length <- 20
+# Number of year to project the population forward - 35 years
+projection_length <- 35
 
 # Final year of projection 
 endYear <- N_0_year + projection_length
@@ -176,9 +175,6 @@ sim_years <- N_0_year:endYear
 #' ----------------------------------------------------------------------------------------
 #  ====   PVA using the " nepva.simplescenarios" - the same used in the shiny version     ====
 #' ----------------------------------------------------------------------------------------
-
-# NOTE: This function requires that at least one impact scenario is specified.
-# So, for the purpose of this analysis, where impacts are not required, we set up a 0-impact scenario
 
 pva_output <- nepva.simplescenarios(
   model.envstoch = m_es,
@@ -226,7 +222,7 @@ pva_output <- nepva.simplescenarios(
 # shape of raw output dataset: (nscen, npop, nyears, nsims, nages)
 #
 # Extract draws for chicks for baseline scenario (shape = (nyears, nsim)) and calculate potential number
-# of migrants under fifferent levels of philopatry rates
+# of migrants under different levels of philopatry rates
 
 philopatry_rate <- c(0.75, 0.5, 0.2)
 
@@ -246,8 +242,6 @@ for(i in 1:length(philopatry_rate)){
 
 migrants_wide <- bind_rows(migrants_wide) %>%
   arrange(fledged_year, recruited_year, desc(phylopatry_rate))
-
-migrants_wide[, 1:50]
 
 
 # Convert to long, which is needed for plotting
@@ -269,7 +263,7 @@ migrants_long %>%
 
 
 # write-out data (wide format)
-write_rds(migrants_wide, path = "../../outputs/nesting/pva_Fowlsheugh_migrants.rds", 
+write_rds(migrants_wide, path = "outputs/nesting/pva_Fowlsheugh_migrants.rds", 
           compress = "gz")
 
 

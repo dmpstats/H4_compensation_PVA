@@ -113,9 +113,9 @@ prod_coquet <- bs_coquet %>%
 prod_coquet
 
 
-#' ---------------------------------------
+#' ------------------------------------------
 #  ====  St Abb’s Head to Fast Castle   ====
-#' ---------------------------------------
+#' ------------------------------------------
 
 
 # --- Colony Counts -----#
@@ -176,7 +176,7 @@ counts_st_abbs <- cc_st_abbs %>%
 
 # --- Breeding Success  -----#
 
-bs_st_abbs <- read_csv("data/St Abb’s Head to Fast Castle_breeding_success_SMP database_data_export_2.csv") %>%
+bs_st_abbs <- read_csv("data/St Abb’s Head to Fast Castle_breeding_success_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   arrange(Year, Site) %>%
   mutate(fledgedPerPair = Fledged_count/Count) #' productivity (No. fledged/pair)
@@ -511,7 +511,7 @@ counts_fowlsheugh %>% filter(Year == 1999)  # way off! Looks like an error in re
 
 # --- Breeding Success  -----#
 
-bs_fowlsheugh <- read_csv("data/Fowlsheugh SPA_breeding_success_SMP database_data_export_2.csv") %>%
+bs_fowlsheugh <- read_csv("data/Fowlsheugh SPA_breeding_success_SMP database_data_export.csv") %>%
   rename_with(str_replace, pattern = " ", replacement = "_") %>%
   arrange(Year, Site) %>%
   mutate(fledgedPerPair = Fledged_count/Count) #' productivity (No. fledged/pair)
