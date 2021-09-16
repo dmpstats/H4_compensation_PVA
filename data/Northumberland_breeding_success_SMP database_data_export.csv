@@ -1,0 +1,54 @@
+Species,Year,Country,County,Site ID,Site,Master site,Subsite,StartGrid,EndGrid,Visit dates,Method,Unit,Count,Accuracy,Fledged count,Fledged accuracy,Comments
+Kittiwake,2019,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,01/06/2019,1.1,AON,30,C,23,C,
+Kittiwake,2012,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,1.1,AON,505,C,439,C,
+Kittiwake,2013,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,30,C,36,C,
+Kittiwake,2007,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,606,C,151,C,2466
+Kittiwake,2013,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,1.1,AON,722,C,438,C,
+Kittiwake,1999,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,51,C,42,C,2359
+Kittiwake,2016,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,30,C,32,C,
+Kittiwake,2004,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,539,C,54,C,2463
+Kittiwake,2011,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,1.1,AON,658,C,653,C,
+Kittiwake,2005,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,127,C,137,C,2365
+Kittiwake,1995,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,602,C,692,C,2454
+Kittiwake,1997,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,760,C,547,C,2456
+Kittiwake,2010,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,1.1,AON,30,C,39,C,
+Kittiwake,2011,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,30,C,45,C,
+Kittiwake,2012,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,215,C,235,C,
+Kittiwake,1997,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,61,C,53,C,2357
+Kittiwake,2018,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,30,C,32,C,
+Kittiwake,1998,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,779,C,257,C,2457
+Kittiwake,2001,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,66,C,86,C,2361
+Kittiwake,1990,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,604,C,604,C,2449
+Kittiwake,1992,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,320,C,346,C,2451
+Kittiwake,1994,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,22,C,21,C,2354
+Kittiwake,2004,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,85,C,94,C,2364
+Kittiwake,2015,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,30,C,38,C,
+Kittiwake,1993,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,487,C,356,C,2452
+Kittiwake,2001,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,724,C,514,C,2460
+Kittiwake,2006,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,568,C,324,C,2465
+Kittiwake,2014,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,1.1,AON,602,C,515,C,
+Kittiwake,2017,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,30,C,36,C,
+Kittiwake,2002,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,81,C,97,C,2362
+Kittiwake,2008,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,30,C,12,C,2368
+Kittiwake,2000,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,609,C,597,C,2459
+Kittiwake,2006,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,162,C,222,C,2366
+Kittiwake,2003,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,84,C,142,C,2363
+Kittiwake,1991,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,633,C,380,C,2450
+Kittiwake,2003,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,638,C,549,C,2462
+Kittiwake,2010,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,1.1,AON,560,C,644,C,
+Kittiwake,2002,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,644,C,509,C,2461
+Kittiwake,1995,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,47,C,52,C,2355
+Kittiwake,2009,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,593,C,702,C,2468
+Kittiwake,1996,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,45,C,55,C,2356
+Kittiwake,1993,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,21,C,27,C,2353
+Kittiwake,2009,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,30,C,45,C,2369
+Kittiwake,1998,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,44,C,25,C,2358
+Kittiwake,2014,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,30,C,38,C,
+Kittiwake,1994,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,631,C,555,C,2453
+Kittiwake,1996,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,668,C,855,C,2455
+Kittiwake,1999,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,704,C,577,C,2458
+Kittiwake,2005,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,590,C,372,C,2464
+Kittiwake,2000,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,80,C,88,C,2360
+Kittiwake,2008,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,other,AON,616,C,202,C,2467
+Kittiwake,2015,England,Northumberland,89250,Farne Islands,Farne Islands SPA,ALL,NU23793786,,,1.1,AON,723,C,545,C,
+Kittiwake,2007,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,ALL,NU29230462,,,other,AON,30,C,29,C,2367

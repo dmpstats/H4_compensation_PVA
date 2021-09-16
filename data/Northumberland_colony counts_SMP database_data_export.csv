@@ -1,0 +1,88 @@
+Species,Country,County,Site ID,Site,Master site,StartGrid,EndGrid,Start date,End date,Times,Method,Unit,Wind,Rain,Visibility,Sea,Count,Accuracy,Estimate type,Comments
+Kittiwake,England,Northumberland,84128,Berwick 4,Berwick to Scottish Border,NT99235549,NT99015582,10/06/2000,,12:00 - 13:00,1.2,AON,2,1,1,2,467,C,,
+Kittiwake,England,Northumberland,84133,Seahouses 1,Seahouses,NU224322,NU226324,26/06/2000,,14:00 - 15:30,1.2,AON,0,1,1,1,298,C,,
+Kittiwake,England,Northumberland,83972,Howick,Howick - Cullornose Point - Dunstanburgh Castle Point,NU26131773,NU25911850,14/06/2000,,08:10 - 08:55,1.2,AON,1,2,1,2,620,C,,
+Kittiwake,England,Northumberland,83975,Dunstanburgh Castle,Howick - Cullornose Point - Dunstanburgh Castle Point,NU25822184,NU25782207,14/06/2000,,10:40 - 12:45,1.2,AON,1,1,1,2,499,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/1991,31/12/1991,,,AON,,,,,1,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/1993,31/12/1993,,,AON,,,,,21,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/1995,31/12/1995,,,AON,,,,,47,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/1997,31/12/1997,,,AON,,,,,61,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/1999,31/12/1999,,,AON,,,,,51,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2000,31/12/2000,,,AON,,,,,80,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2002,31/12/2002,,,AON,,,,,81,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2004,31/12/2004,,,AON,,,,,85,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2009,31/12/2009,,,AON,,,,,168,C,,Imported from RSPB database on 15/01/2010
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2008,31/12/2008,,1.2,AON,,,,,161,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/2008,31/12/2008,,,AON,,,,,4275,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2006,30/06/2006,,1.2,AON,,,,,262,C,,"No methods, dates or times provided."
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2006,30/06/2006,,1.2,AON,,,,,207,C,,"No methods, dates or times provided."
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2006,30/06/2006,,1.2,AON,,,,,1185,C,,"No methods, dates or times provided."
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2006,30/06/2006,,1.2,AON,,,,,175,C,,"No methods, dates or times provided."
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2006,30/06/2006,,1.2,AON,,,,,1168,C,,"No methods, dates or times provided."
+Kittiwake,England,Northumberland,83973,Cullernose Point,Howick - Cullornose Point - Dunstanburgh Castle Point,NU25961869,NU26111873,01/01/1991,31/12/1991,,,AON,,,,,536,C,,
+Kittiwake,England,Northumberland,83975,Dunstanburgh Castle,Howick - Cullornose Point - Dunstanburgh Castle Point,NU25822184,NU25782207,01/01/1991,31/12/1991,,,AON,,,,,608,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,28/06/2006,,,1.2,AON,,,,,162,C,,No times provided by counter.
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,28/05/2014,18/06/2014,,,AON,,,,,4175,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2013,31/12/2013,,,AON,,,,,185,C,,
+Kittiwake,England,Northumberland,83975,Dunstanburgh Castle,Howick - Cullornose Point - Dunstanburgh Castle Point,NU25822184,NU25782207,29/05/2019,,12:10 - 15:03,1.2,AON,3,1,1,2,336,C,,count of total birds 570
+Kittiwake,England,Northumberland,83973,Cullernose Point,Howick - Cullornose Point - Dunstanburgh Castle Point,NU25961869,NU26111873,28/05/2019,,18:11 - 18:33,1.2,AON,2,1,1,2,92,C,,136 toal individual birds counted
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2017,21/06/2017,,1.2,AON,,,,,4753,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2016,31/12/2016,,,AON,,,,,317,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2015,31/12/2015,,,AON,,,,,326,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/1991,31/12/1991,,,AON,,,,,5743,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/1993,31/12/1993,,,AON,,,,,5889,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/1995,31/12/1995,,,AON,,,,,6313,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/1997,31/12/1997,,,AON,,,,,6119,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/1998,31/12/1998,,,AON,,,,,5009,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/1999,31/12/1999,,,AON,,,,,5492,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/2000,31/12/2000,,,AON,,,,,5125,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/2001,31/12/2001,,,AON,,,,,5781,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/2002,31/12/2002,,,AON,,,,,5055,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/2003,31/12/2003,,,AON,,,,,5192,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/2004,31/12/2004,,,AON,,,,,5151,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/2005,31/12/2005,,,AON,,,,,5376,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/2010,31/12/2010,,1.2,AON,,,,,4768,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2007,31/12/2007,,1.2,AON,,,,,157,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2011,31/12/2011,,,AON,,,,,193,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2012,28/11/2012,,,AON,,,,,215,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2016,18/06/2016,,1.2,AON,,,,,3527,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2015,18/06/2015,,1.2,AON,,,,,3956,C,,
+Kittiwake,England,Northumberland,83973,Cullernose Point,Howick - Cullornose Point - Dunstanburgh Castle Point,NU25961869,NU26111873,01/01/1990,31/12/1990,,,AON,,,,,408,C,,
+Kittiwake,England,Northumberland,83973,Cullernose Point,Howick - Cullornose Point - Dunstanburgh Castle Point,NU25961869,NU26111873,01/01/1992,31/12/1992,,,AON,,,,,588,C,,
+Kittiwake,England,Northumberland,83975,Dunstanburgh Castle,Howick - Cullornose Point - Dunstanburgh Castle Point,NU25822184,NU25782207,01/01/1990,31/12/1990,,,AON,,,,,612,C,,
+Kittiwake,England,Northumberland,83975,Dunstanburgh Castle,Howick - Cullornose Point - Dunstanburgh Castle Point,NU25822184,NU25782207,01/01/1992,31/12/1992,,,AON,,,,,564,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2006,30/06/2006,,1.2,AON,,,,,1420,C,,"No methods, dates or times provided."
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2006,30/06/2006,,1.2,AON,,,,,18,C,,"No methods, dates or times provided."
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2006,30/06/2006,,1.2,AON,,,,,92,C,,"No methods, dates or times provided."
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2006,30/06/2006,,1.2,AON,,,,,96,C,,"No methods, dates or times provided."
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2006,30/06/2006,,1.2,AON,,,,,20,C,,"No methods, dates or times provided."
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2006,30/06/2006,,1.2,AON,,,,,70,C,,"No methods, dates or times provided."
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/1990,31/12/1990,,,AON,,,,,0,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/1992,31/12/1992,,,AON,,,,,14,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/1994,31/12/1994,,,AON,,,,,22,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/1996,31/12/1996,,,AON,,,,,45,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/1998,31/12/1998,,,AON,,,,,44,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2001,31/12/2001,,,AON,,,,,66,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2003,31/12/2003,,,AON,,,,,84,C,,
+Kittiwake,England,Northumberland,84133,Seahouses 1,Seahouses,NU224322,NU226324,01/01/1992,31/12/1992,,,AON,,,,,126,C,,
+Kittiwake,England,Northumberland,84127,Berwick 3,Berwick to Scottish Border,NU00095470,NT99235549,10/06/2000,,10:30 - 12:00,1.2,AON,2,1,1,2,1060,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2005,31/12/2005,,,AON,,,,,127,C,,
+Kittiwake,England,Northumberland,83973,Cullernose Point,Howick - Cullornose Point - Dunstanburgh Castle Point,NU25961869,NU26111873,14/06/2000,,09:10 - 10:00,1.2,AON,1,2,1,2,530,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,20/05/2018,30/05/2018,,,AON,,,,,361,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2017,31/12/2017,,,AON,,,,,448,C,,
+Kittiwake,England,Northumberland,84133,Seahouses 1,Seahouses,NU224322,NU226324,29/05/2019,,17:36 - 17:56,1.2,AON,2,1,1,2,206,C,,Total birds counted 294
+Kittiwake,England,Northumberland,83972,Howick,Howick - Cullornose Point - Dunstanburgh Castle Point,NU26131773,NU25911850,28/05/2019,,14:40 - 16:59,1.2,AON,1,2,1,2,640,C,,Total individual birds counted 838
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2014,31/12/2014,,,AON,,,,,288,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,25/05/2013,30/06/2013,,1.2,AON,,,,,3443,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2018,21/06/2018,,1.2,AON,,,,,3158,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/1990,31/12/1990,,,AON,,,,,6393,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/1992,31/12/1992,,,AON,,,,,6178,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/1994,31/12/1994,,,AON,,,,,5620,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/1996,31/12/1996,,,AON,,,,,6236,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/01/2010,31/12/2010,,,AON,,,,,183,C,,Imported from RSPB database 04/03/2011
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/2007,31/12/2007,,,AON,,,,,4669,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/2009,12/10/2009,,,AON,,,,,3699,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/2011,31/12/2011,,1.2,AON,,,,,3976,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/01/2012,31/12/2012,,1.2,AON,,,,,4241,C,,
+Kittiwake,England,Northumberland,89250,Farne Islands,Farne Islands SPA,NU23793786,,01/06/2019,21/06/2019,00:00 - 00:00,1.2,AON,0,1,1,1,4402,C,,
+Kittiwake,England,Northumberland,88850,Coquet Island RSPB,Coquet Island SPA,NU29230462,,01/06/2019,,00:00 - 00:00,1.2,AON,0,1,1,1,439,C,,

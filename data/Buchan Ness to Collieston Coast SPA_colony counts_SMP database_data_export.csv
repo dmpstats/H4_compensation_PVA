@@ -1,0 +1,7 @@
+Species,Country,County,Site ID,Site,Master site,StartGrid,EndGrid,Start date,End date,Times,Method,Unit,Wind,Rain,Visibility,Sea,Count,Accuracy,Estimate type,Comments
+Kittiwake,Scotland,Banff and Buchan,100776,Buchan Ness to Collieston,Buchan Ness to Collieston Coast SPA,NK13184185,NK04222857,01/01/2001,31/12/2001,,,AON,,,,,14091,C,,
+Kittiwake,Scotland,Banff and Buchan,100776,Buchan Ness to Collieston,Buchan Ness to Collieston Coast SPA,NK13184185,NK04222857,23/05/2007,23/06/2007,08:00-17:00,1.2,AON,,,,,12542,C,,
+Kittiwake,Scotland,Banff and Buchan,100776,Buchan Ness to Collieston,Buchan Ness to Collieston Coast SPA,NK13184185,NK04222857,11/06/2019,22/06/2019,09:00-16:00,1.2,AON,,,,,11265,C,,Does not inlcude section from SSSI boundary to Boddam
+Kittiwake,Scotland,Banff and Buchan,100776,Buchan Ness to Collieston,Buchan Ness to Collieston Coast SPA,NK13184185,NK04222857,11/06/2019,22/06/2019,09:00-16:00,1.2,AON,,,,,30,H,Mid,Does not inlcude section from SSSI boundary to Boddam
+Kittiwake,Scotland,Banff and Buchan,100776,Buchan Ness to Collieston,Buchan Ness to Collieston Coast SPA,NK13184185,NK04222857,01/01/1995,31/12/1995,,,AON,,,,,24957,C,,
+Kittiwake,Scotland,Banff and Buchan,100776,Buchan Ness to Collieston,Buchan Ness to Collieston Coast SPA,NK13184185,NK04222857,01/01/2004,31/12/2004,,,AON,,,,,13330,C,,

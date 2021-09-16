@@ -1,0 +1,19 @@
+Species,Country,County,Site ID,Site,Master site,StartGrid,EndGrid,Start date,End date,Times,Method,Unit,Wind,Rain,Visibility,Sea,Count,Accuracy,Estimate type,Comments
+Kittiwake,Scotland,Kincardine and Deeside,91199,Swallow Cove - Crawton,Fowlsheugh SPA,NO873785,NO881798,01/01/1992,31/12/1992,,,AON,,,,,8195,C,,
+Kittiwake,Scotland,Kincardine and Deeside,91199,Swallow Cove - Crawton,Fowlsheugh SPA,NO873785,NO881798,10/06/2000,,08:00 - 12:15,1.2,AON,,,,,4739,C,,
+Kittiwake,Scotland,Kincardine and Deeside,91199,Swallow Cove - Crawton,Fowlsheugh SPA,NO873785,NO881798,01/01/1999,31/12/1999,,,AON,,,,,4739,C,,
+Kittiwake,Scotland,Kincardine and Deeside,91199,Swallow Cove - Crawton,Fowlsheugh SPA,NO873785,NO881798,19/06/2018,,12:00 - 16:45,1.2,AON,3,1,1,2,2156,C,,
+Kittiwake,Scotland,Kincardine and Deeside,78930,Thornyhive Bay,Fowlsheugh SPA,NO88058174,NO88048259,01/01/1992,31/12/1992,,,AON,,,,,8593,C,,
+Kittiwake,Scotland,Kincardine and Deeside,78930,Thornyhive Bay,Fowlsheugh SPA,NO88058174,NO88048259,18/06/1999,25/06/1999,,1.1,AON,,,,,3098,C,,
+Kittiwake,Scotland,Kincardine and Deeside,78930,Thornyhive Bay,Fowlsheugh SPA,NO88058174,NO88048259,18/06/2018,,11:00 - 13:40,1.2,AON,4,1,1,2,1671,C,,
+Kittiwake,Scotland,Kincardine and Deeside,78931,Tremuda/Old Hall Bay,Fowlsheugh SPA,NO88048259,NO87948362,01/01/1992,31/12/1992,,,AON,,,,,7040,C,,Counts made before site was shortened to match SPA boundary. 
+Kittiwake,Scotland,Kincardine and Deeside,78931,Tremuda/Old Hall Bay,Fowlsheugh SPA,NO88048259,NO87948362,01/01/1999,31/12/1999,,,AON,,,,,1810,C,,Counts made before site was shortened to match SPA boundary. 
+Kittiwake,Scotland,Kincardine and Deeside,78931,Tremuda/Old Hall Bay,Fowlsheugh SPA,NO88048259,NO87948362,18/06/2018,,13:50 - 15:50,1.2,AON,4,1,1,2,768,C,,Counts made before site was shortened to match SPA boundary. 
+Kittiwake,Scotland,Kincardine and Deeside,89304,Fowlsheugh RSPB,Fowlsheugh SPA,NO881798,NO880817,01/01/1992,31/12/1992,,,AON,,,,,34872,C,,
+Kittiwake,Scotland,Kincardine and Deeside,89304,Fowlsheugh RSPB,Fowlsheugh SPA,NO881798,NO880817,01/01/2009,31/12/2009,,,AON,,,,,9454,C,,Imported from RSPB database on 15/01/2010
+Kittiwake,Scotland,Kincardine and Deeside,89304,Fowlsheugh RSPB,Fowlsheugh SPA,NO881798,NO880817,01/01/1991,31/12/1991,,,AON,,,,,23522,C,,
+Kittiwake,Scotland,Kincardine and Deeside,89304,Fowlsheugh RSPB,Fowlsheugh SPA,NO881798,NO880817,01/01/1999,31/12/1999,,,AON,,,,,18800,C,,
+Kittiwake,Scotland,Kincardine and Deeside,89304,Fowlsheugh RSPB,Fowlsheugh SPA,NO881798,NO880817,17/06/2006,,,,AON,,,,,11140,C,,
+Kittiwake,Scotland,Kincardine and Deeside,89304,Fowlsheugh RSPB,Fowlsheugh SPA,NO881798,NO880817,03/06/2015,08/06/2015,,1.2,AON,,,,,9655,C,,Drone used to count 12% of total.
+Kittiwake,Scotland,Kincardine and Deeside,89304,Fowlsheugh RSPB,Fowlsheugh SPA,NO881798,NO880817,03/06/2018,08/06/2018,,1.2,AON,,,,,9444,C,,
+Kittiwake,Scotland,Kincardine and Deeside,89304,Fowlsheugh RSPB,Fowlsheugh SPA,NO881798,NO880817,01/01/2012,28/11/2012,,,AON,,,,,9337,C,,

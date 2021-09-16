@@ -1,0 +1,9 @@
+Species,spa,prod_mean,prod_sd,startYear,endYear,n,source
+Kittiwake,Flamborough Head and Bempton Cliffs,0.7085898992358117,0.20460559912082832,2010,2019,10,smp_db
+Kittiwake,Coquet Island SPA,1.1210548934991897,0.2774228944326903,1993,2019,27,smp_db
+Kittiwake,St Abb's Head to Fast Castle SPA,0.6673438544344605,0.33395005369021485,1987,2019,33,smp_db
+Kittiwake,Farne Islands SPA,0.8238548665740157,0.3162587722572259,1987,2015,29,smp_db
+Kittiwake,Forth Islands SPA,0.7957142857142857,0.3315547789258533,2010,2016,7,ceh
+Kittiwake,Buchan Ness to Collieston Coast SPA,0.6321520916318136,0.33325523428724924,1989,2019,24,smp_db
+Kittiwake,Fowlsheugh SPA,0.7927444028481072,0.3204324155886723,1986,2019,32,smp_db
+Kittiwake,"Troup, Pennan and Lion's Heads SPA",1.1087496701690418,0.25176739989450453,2010,2019,10,smp_db

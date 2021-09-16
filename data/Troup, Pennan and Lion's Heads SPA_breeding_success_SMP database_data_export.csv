@@ -1,0 +1,13 @@
+Species,Year,Country,County,Site ID,Site,Master site,Subsite,StartGrid,EndGrid,Visit dates,Method,Unit,Count,Accuracy,Fledged count,Fledged accuracy,Comments
+Kittiwake,2016,Scotland,Banff and Buchan,100802,Troup & Lion's Head RSPB (Coast & Reserve),"Troup, Pennan and Lion's Heads SPA",ALL,NJ81566704,NJ83896618,"05/06/2016,06/07/2016,19/07/2016",1.1,AON,404,C,454,C,
+Kittiwake,2018,Scotland,Banff and Buchan,100802,Troup & Lion's Head RSPB (Coast & Reserve),"Troup, Pennan and Lion's Heads SPA",ALL,NJ81566704,NJ83896618,"01/06/2018,10/06/2018,26/06/2018",1.1,AON,441,C,417,C,
+Kittiwake,2019,Scotland,Banff and Buchan,100802,Troup & Lion's Head RSPB (Coast & Reserve),"Troup, Pennan and Lion's Heads SPA",ALL,NJ81566704,NJ83896618,"04/06/2019,13/06/2019,16/07/2019",1.1,AON,466,C,320,C,
+Kittiwake,2012,Scotland,Banff and Buchan,100802,Troup & Lion's Head RSPB (Coast & Reserve),"Troup, Pennan and Lion's Heads SPA",ALL,NJ81566704,NJ83896618,,other,AON,400,C,553,C,
+Kittiwake,2013,Scotland,Banff and Buchan,100802,Troup & Lion's Head RSPB (Coast & Reserve),"Troup, Pennan and Lion's Heads SPA",ALL,NJ81566704,NJ83896618,,1.1,AON,318,C,245,C,
+Kittiwake,2017,Scotland,Banff and Buchan,100802,Troup & Lion's Head RSPB (Coast & Reserve),"Troup, Pennan and Lion's Heads SPA",ALL,NJ81566704,NJ83896618,,1.1,AON,411,C,486,C,
+Kittiwake,2010,Scotland,Banff and Buchan,100802,Troup & Lion's Head RSPB (Coast & Reserve),"Troup, Pennan and Lion's Heads SPA",ALL,NJ81566704,NJ83896618,,other,AON,411,C,609,C,Probably an overestimate as last visit before end of June.
+Kittiwake,2011,Scotland,Banff and Buchan,100802,Troup & Lion's Head RSPB (Coast & Reserve),"Troup, Pennan and Lion's Heads SPA",ALL,NJ81566704,NJ83896618,,other,AON,379,C,417,C,
+Kittiwake,2018,Scotland,Banff and Buchan,100802,Troup & Lion's Head RSPB (Coast & Reserve),"Troup, Pennan and Lion's Heads SPA",ALL,NJ81566704,NJ83896618,,1.1,AON,441,C,416,C,
+Kittiwake,2014,Scotland,Banff and Buchan,100802,Troup & Lion's Head RSPB (Coast & Reserve),"Troup, Pennan and Lion's Heads SPA",ALL,NJ81566704,NJ83896618,,other,AON,395,C,507,C,
+Kittiwake,2015,Scotland,Banff and Buchan,100802,Troup & Lion's Head RSPB (Coast & Reserve),"Troup, Pennan and Lion's Heads SPA",ALL,NJ81566704,NJ83896618,,other,AON,414,C,469,C,
+Kittiwake,2016,Scotland,Banff and Buchan,100802,Troup & Lion's Head RSPB (Coast & Reserve),"Troup, Pennan and Lion's Heads SPA",ALL,NJ81566704,NJ83896618,,other,AON,404,C,453,C,
