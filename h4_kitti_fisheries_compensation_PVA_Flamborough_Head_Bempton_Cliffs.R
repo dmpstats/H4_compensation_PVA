@@ -55,11 +55,7 @@ spa_name <- "Flamborough Head and Bempton Cliffs"
 #  ====    Upload data         ====
 #' --------------------------------
 
-annual_prod <- read_csv("../../data/SPAs_prod_pars.csv") %>%
-  filter(spa == spa_name); annual_prod
-
-
-load("../../data/Bruno_eval.Rdata")
+load("data/Bruno_eval.Rdata")
 theta_given_F_draws <- data.bruno
 
 colMeans(theta_given_F_draws)
@@ -80,7 +76,7 @@ maxBrood <- 2
 # Calculate draws of fledged-per-nest under each scenario
 FPN_given_F_draws <- theta_given_F_draws * maxBrood
 
-# Derive PVA baseline productivity parameters, for each level of recruitment
+# Derive PVA baseline productivity parameters, for each level of sandeel recruitment
 bsln_prod_given_F_sumStats <- FPN_given_F_draws %>%
   select(contains("Ftot")) %>%
   pivot_longer(cols = everything(), names_to = "scenario_name", values_to = "fpn_draws") %>%
@@ -158,7 +154,7 @@ bsln_immat_surv <- data.frame(Mean = c(0.790, 0.854, 0.854, 0.854), SD = c(0, 0.
 bsln_adult_surv <- data.frame(Mean = 0.854, SD = 0.051); bsln_adult_surv
 
 
-# Baseline Productivity, for each recruitment level (per list element)
+# Baseline Productivity, for each sandeel recruitment level (per list element)
 bsln_prod <- bsln_prod_given_F_sumStats %>%
   split(.$scenario_name) %>%
   map(., function(x){
@@ -220,7 +216,7 @@ imp_survadult_sd <- c(0)
 imp_start <- N_0_year + 1
 
 # impact final year
-imp_end <- N_0_year + 20
+imp_end <- N_0_year + 35
 
 
 
@@ -230,7 +226,7 @@ imp_end <- N_0_year + 20
 #' ----------------------------------------------------
 
 # Number of simulations
-nsim <- 1000 # 5000
+nsim <- 5000
 
 # Years of burn-in
 nburnin <- 0
@@ -239,8 +235,8 @@ nburnin <- 0
 seed_value <- 10009
 
 
-# Number of year to project the population forward - 20 years
-projection_length <- 20
+# Number of year to project the population forward - 35 years
+projection_length <- 35
 
 # Final year of projection 
 endYear <- N_0_year + projection_length

@@ -63,3 +63,4 @@ h4_compensation_kitti_mockPVA.R
 h4_kitti_compensation_PVA_Flamborough_Head_and_Bempton_Cliffs.R
 h4_kitti_compensation_PVA_Flamborough_Head_and_Bempton_Cliffs_post-2000.R
 .Rproj.user/
+outputs/
